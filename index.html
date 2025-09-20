@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sunnytalk: Premium industrial automatic control parts for textile automation, E+L equipment, and dyeing factory accessories in Indonesia.">
+    <meta name="keywords" content="textile equipment Indonesia, dyeing parts, automation controls, E+L textile, SunnyTalk Hangzhou">
+    <title>Sunnytalk - Industrial Automatic Control Parts for Indonesia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; color: #333; background-color: #f8f8f8; }
+        h1, h2, h3, h5 { font-family: 'Montserrat', sans-serif; color: #800000; } /* Dark red from logo */
+        .navbar { background-color: #808080; } /* Dark gray */
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x800?text=Textile+Automation+Hero'); background-size: cover; background-attachment: fixed; color: white; padding: 150px 0; text-align: center; }
+        .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        .cta-btn { background-color: #800000; border: none; color: white; }
+        .cta-btn:hover { background-color: #600000; }
+        .bg-light { background-color: #D3D3D3 !important; } /* Light gray from logo */
+        .footer { background-color: #808080; color: white; padding: 30px 0; }
+        /* Language toggle */
+        .lang-en { display: block; }
+        .lang-id, .lang-es, .lang-ru { display: none; }
+        body.lang-id .lang-id, body.lang-es .lang-es, body.lang-ru .lang-ru { display: block; }
+        body.lang-id .lang-en, body.lang-es .lang-en, body.lang-ru .lang-en { display: none; }
+        /* Add for es and ru similarly */
+    </style>
+</head>
+<body data-aos-easing="ease-in-out" data-aos-duration="800">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="https://placehold.co/200x50?text=SunnyTalk+Logo" alt="Sunnytalk Logo" style="height: 40px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="langToggle" role="button" data-bs-toggle="dropdown">Language</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="switchLang('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="switchLang('id')">Bahasa Indonesia</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="switchLang('es')">Español</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="switchLang('ru')">Русский</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" data-aos="fade-up">
+        <div class="container">
+            <h1 class="lang-en">Premium Automatic Control Parts for Indonesian Textile Industry</h1>
+            <h1 class="lang-id">Bagian Kontrol Otomatis Premium untuk Industri Tekstil Indonesia</h1>
+            <h1 class="lang-es">Piezas de Control Automático Premium para la Industria Textil Indonesia</h1>
+            <h1 class="lang-ru">Премиум части автоматического контроля для индонезийской текстильной промышленности</h1>
+            <p class="lang-en">Your trusted partner in Hangzhou for E+L textile equipment, dyeing accessories, and automation solutions tailored for Indonesian factories and traders.</p>
+            <p class="lang-id">Mitra terpercaya Anda di Hangzhou untuk peralatan tekstil E+L, aksesori pencelupan, dan solusi otomatisasi yang disesuaikan untuk pabrik dan pedagang Indonesia.</p>
+            <p class="lang-es">Su socio de confianza en Hangzhou para equipo textil E+L, accesorios de teñido y soluciones de automatización adaptadas para fábricas y comerciantes indonesios.</p>
+            <p class="lang-ru">Ваш надежный партнер в Ханчжоу для оборудования текстильного E+L, аксессуаров для крашения и решений по автоматизации, адаптированных для индонезийских фабрик и торговцев.</p>
+            <a href="#contact" class="btn cta-btn btn-lg">Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5" data-aos="fade-right">
+        <div class="container">
+            <h2 class="lang-en">About Sunnytalk</h2>
+            <h2 class="lang-id">Tentang Sunnytalk</h2>
+            <h2 class="lang-es">Acerca de Sunnytalk</h2>
+            <h2 class="lang-ru">О Sunnytalk</h2>
+            <p class="lang-en">Hangzhou SunnyTalk Trading Co., Ltd. is a leading trade company specializing in industrial automatic control parts for textile automation, E+L equipment, and dyeing factory accessories. Based in Hangzhou, China, we focus on the Indonesian market, serving dyeing and finishing factories and intermediate traders. Note: SunnyTalk is not an authorized distributor; all trademarks belong to their owners.</p>
+            <p class="lang-id">Hangzhou SunnyTalk Trading Co., Ltd. adalah perusahaan perdagangan terkemuka yang mengkhususkan diri dalam bagian kontrol otomatis industri untuk otomatisasi tekstil, peralatan E+L, dan aksesori pabrik pencelupan. Berbasis di Hangzhou, China, kami fokus pada pasar Indonesia, melayani pabrik pencelupan dan finishing serta pedagang perantara. Catatan: SunnyTalk bukan distributor resmi; semua merek dagang milik pemiliknya.</p>
+            <p class="lang-es">Hangzhou SunnyTalk Trading Co., Ltd. es una empresa comercial líder especializada en piezas de control automático industrial para automatización textil, equipo E+L y accesorios de fábrica de teñido. Con sede en Hangzhou, China, nos enfocamos en el mercado indonesio, sirviendo fábricas de teñido y acabado e intermediarios comerciales. Nota: SunnyTalk no es un distribuidor autorizado; todas las marcas comerciales pertenecen a sus dueños.</p>
+            <p class="lang-ru">Hangzhou SunnyTalk Trading Co., Ltd. - ведущая торговая компания, специализирующаяся на промышленных частях автоматического контроля для текстильной автоматизации, оборудования E+L и аксессуаров для фабрик крашения. Базируется в Ханчжоу, Китай, мы фокусируемся на индонезийском рынке, обслуживая фабрики крашения и отделки, а также промежуточных торговцев. Примечание: SunnyTalk не является авторизованным дистрибьютором; все торговые марки принадлежат их владельцам.</p>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <img src="https://placehold.co/600x400?text=Company+Building" alt="Sunnytalk Office" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="lang-en">Our Expertise</h3>
+                    <h3 class="lang-id">Keahlian Kami</h3>
+                    <h3 class="lang-es">Nuestra Experiencia</h3>
+                    <h3 class="lang-ru">Наш Опыт</h3>
+                    <ul>
+                        <li class="lang-en">High-quality parts from brands like SICK, Erhardt+Leimer, Siemens.</li>
+                        <li class="lang-id">Bagian berkualitas tinggi dari merek seperti SICK, Erhardt+Leimer, Siemens.</li>
+                        <li class="lang-es">Piezas de alta calidad de marcas como SICK, Erhardt+Leimer, Siemens.</li>
+                        <li class="lang-ru">Высококачественные части от брендов вроде SICK, Erhardt+Leimer, Siemens.</li>
+                        <li class="lang-en">Tailored solutions for Indonesian textile efficiency.</li>
+                        <li class="lang-id">Solusi yang disesuaikan untuk efisiensi tekstil Indonesia.</li>
+                        <li class="lang-es">Soluciones adaptadas para la eficiencia textil indonesia.</li>
+                        <li class="lang-ru">Адаптированные решения для эффективности индонезийского текстиля.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5 bg-light" data-aos="fade-left">
+        <div class="container">
+            <h2 class="lang-en">Our Products</h2>
+            <h2 class="lang-id">Produk Kami</h2>
+            <h2 class="lang-es">Nuestros Productos</h2>
+            <h2 class="lang-ru">Наши Продукты</h2>
+            <p class="lang-en">Explore our range of automatic control parts, categorized by brand. Click for details and inquiry.</p>
+            <p class="lang-id">Jelajahi rangkaian bagian kontrol otomatis kami, dikategorikan berdasarkan merek. Klik untuk detail dan permintaan.</p>
+            <p class="lang-es">Explora nuestra gama de piezas de control automático, categorizadas por marca. Haz clic para detalles e indagación.</p>
+            <p class="lang-ru">Изучите наш ассортимент частей автоматического контроля, категоризированных по бренду. Нажмите для деталей и запроса.</p>
+
+            <!-- Brand Accordions (Full list from PDFs) -->
+            <div class="accordion" id="productAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sick">SICK</button></h2>
+                    <div id="sick" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-md-4 product-card mb-4">
+                                    <div class="card">
+                                        <img src="https://placehold.co/300x200?text=SICK+Extension+Module" class="card-img-top" alt="Extension Module FX3-XTI084002">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Extension Module FX3-XTI084002 /1044125</h5>
+                                            <p class="card-text lang-en">High-performance extension module for automation.</p>
+                                            <p class="card-text lang-id">Modul ekstensi berkinerja tinggi untuk otomatisasi.</p>
+                                            <p class="card-text lang-es">Módulo de extensión de alto rendimiento para automatización.</p>
+                                            <p class="card-text lang-ru">Высокопроизводительный модуль расширения для автоматизации.</p>
+                                            <a href="#contact" class="btn cta-btn">Inquire</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 product-card mb-4">
+                                    <div class="card">
+                                        <img src="https://placehold.co/300x200?text=SICK+Photoelectric+Sensor" class="card-img-top" alt="Photoelectric Sensor WL280-S230">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Photoelectric Sensor Model: WL280-S230</h5>
+                                            <p class="card-text lang-en">Reliable sensor for textile detection.</p>
+                                            <p class="card-text lang-id">Sensor andal untuk deteksi tekstil.</p>
+                                            <p class="card-text lang-es">Sensor confiable para detección textil.</p>
+                                            <p class="card-text lang-ru">Надежный датчик для обнаружения текстиля.</p>
+                                            <a href="#contact" class="btn cta-btn">Inquire</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Add remaining SICK products from PDF, e.g., Flexisoft CPU FX3-CPU000000 / 1043783 -->
+                                <!-- Repeat card structure for each: Gateway Profibus, Ethernet IP, etc. -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#erhardt">Erhardt+Leimer</button></h2>
+                    <div id="erhardt" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-md-4 product-card mb-4">
+                                    <div class="card">
+                                        <img src="https://placehold.co/300x200?text=Erhardt+CV2201" class="card-img-top" alt="CV2201 Amplifier Card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">CV2201 Amplifier Card Nr.302990</h5>
+                                            <p class="card-text lang-en">Amplifier for precise control in dyeing processes.</p>
+                                            <p class="card-text lang-id">Amplifier untuk kontrol presisi dalam proses pencelupan.</p>
+                                            <p class="card-text lang-es">Amplificador para control preciso en procesos de teñido.</p>
+                                            <p class="card-text lang-ru">Усилитель для точного контроля в процессах крашения.</p>
+                                            <a href="#contact" class="btn cta-btn">Inquire</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Add all Erhardt+Leimer products: DC5501, KF2020, PD2525, etc. -->
+                                <!-- Use images from PDF screenshots, e.g., for PD2525 load cell -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional accordions for Phoenix Contact, Lenze, Baumer, Parts on Gas Burner, Tamagawa, VIPA, Baelz, Noeding, FESTO, BELIMO, DUNGS, HoneyWell, SIEMENS, RIELLO, KromSchröder, BURKERT, Nöding, IMI NORGREN, Fong's, SICK (others), Others -->
+                <!-- Example for one more -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siemens">SIEMENS</button></h2>
+                    <div id="siemens" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <!-- Add cards for LFL1.335, LGB21.130A27, etc., with translated descriptions -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Continue for all brands; in production, expand fully -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5" data-aos="fade-up">
+        <div class="container">
+            <h2 class="lang-en">Contact Us</h2>
+            <h2 class="lang-id">Hubungi Kami</h2>
+            <h2 class="lang-es">Contáctenos</h2>
+            <h2 class="lang-ru">Свяжитесь с нами</h2>
+            <p class="lang-en">Reach out for inquiries on textile automation parts for Indonesia.</p>
+            <p class="lang-id">Hubungi untuk pertanyaan tentang bagian otomatisasi tekstil untuk Indonesia.</p>
+            <p class="lang-es">Contacta para consultas sobre piezas de automatización textil para Indonesia.</p>
+            <p class="lang-ru">Обратитесь за запросами по частям автоматизации текстиля для Индонезии.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="https://formspree.io/f/your-email" method="POST">
+                        <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Name / Nama / Nombre / Имя" required></div>
+                        <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Email" required></div>
+                        <div class="mb-3"><input type="text" class="form-control" name="product" placeholder="Interested Product / Produk yang diminati / Producto interesado / Заинтересованный продукт"></div>
+                        <div class="mb-3"><textarea class="form-control" name="message" placeholder="Message / Pesan / Mensaje / Сообщение" rows="5" required></textarea></div>
+                        <button type="submit" class="btn cta-btn">Send</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Address:</strong> Rm. #1212, JinLong Building, Binjiang Zone, Hangzhou, Zhejiang, China</p>
+                    <p><strong>Mobile/WhatsApp:</strong> +8613989830024</p>
+                    <p><strong>Email:</strong> xuan.liang923@gmail.com</p>
+                    <a href="https://wa.me/8613989830024" class="btn cta-btn">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 Sunnytalk Trading Co., Ltd. All rights reserved.</p>
+            <a href="#" class="text-white mx-2">Facebook</a> | <a href="#" class="text-white mx-2">LinkedIn</a> | <a href="#" class="text-white mx-2">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+        function switchLang(lang) {
+            document.body.classList.remove('lang-en', 'lang-id', 'lang-es', 'lang-ru');
+            document.body.classList.add(`lang-${lang}`);
+        }
+    </script>
+</body>
+</html>
