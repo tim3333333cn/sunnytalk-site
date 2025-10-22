@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Roboto', sans-serif; color: #333; background-color: #f8f8f8; }
+        body { font-family: 'Roboto', sans-serif; color: #333; background-color: #ffebee; }
         h1, h2, h3, h5 { font-family: 'Montserrat', sans-serif; color: #800000; } /* Dark red from logo */
         .navbar { background-color: #808080; } /* Dark gray */
         .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x800?text=Textile+Automation+Hero'); background-size: cover; background-attachment: fixed; color: white; padding: 150px 0; text-align: center; }
@@ -33,7 +33,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="https://placehold.co/200x50?text=SunnyTalk+Logo" alt="Sunnytalk Logo" style="height: 40px;"></a>
+            <a class="navbar-brand" href="#"><img src="images/logo.jpg" alt="Sunnytalk Logo" style="height: 60px; width: auto;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -85,6 +85,9 @@
             <p class="lang-ru">Hangzhou SunnyTalk Trading Co., Ltd. - ведущая торговая компания, специализирующаяся на промышленных частях автоматического контроля для текстильной автоматизации, оборудования E+L и аксессуаров для фабрик крашения. Базируется в Ханчжоу, Китай, мы фокусируемся на индонезийском рынке, обслуживая фабрики крашения и отделки, а также промежуточных торговцев. Примечание: SunnyTalk не является авторизованным дистрибьютором; все торговые марки принадлежат их владельцам.</p>
             <div class="row mt-4">
                 <div class="col-md-6">
+                    <img src="https://placehold.co/600x400?text=Company+Building" alt="Sunnytalk Office" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
                     <h3 class="lang-en">Our Expertise</h3>
                     <h3 class="lang-id">Keahlian Kami</h3>
                     <h3 class="lang-es">Nuestra Experiencia</h3>
@@ -119,13 +122,13 @@
             <!-- Brand Accordions (Full list from PDFs) -->
             <div class="accordion" id="productAccordion">
                 <div class="accordion-item">
-                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sick">SICK</button></h2>
+                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sick">SICK\Erhardt+Leimer\SIEMENS</button></h2>
                     <div id="sick" class="accordion-collapse collapse show">
                         <div class="accordion-body">
                             <div class="row">
                                 <div class="col-md-4 product-card mb-4">
                                     <div class="card">
-                                        <img src="images/list1.jpg" class="card-img-top" alt="SICK Extension Module">
+                                        <img src="images/list1.jpg" class="card-img-top" alt="Extension Module FX3-XTI084002">
                                         <div class="card-body">
                                             <h5 class="card-title">Extension Module FX3-XTI084002 /1044125</h5>
                                             <p class="card-text lang-en">High-performance extension module for automation.</p>
@@ -138,20 +141,9 @@
                                 </div>
                                 <div class="col-md-4 product-card mb-4">
                                     <div class="card">
-                                        <img src="images/list2.jpg" class="card-img-top" alt="SICK Extension Module">
+                                        <img src="images/list2.jpg" class="card-img-top" alt="Photoelectric Sensor WL280-S230">
                                         <div class="card-body">
-                                            <h5 class="card-title">Photoelectric Sensor Model: WL280-S230</h5>
-                                            <p class="card-text lang-en">Reliable sensor for textile detection.</p>
-                                            <p class="card-text lang-id">Sensor andal untuk deteksi tekstil.</p>
-                                            <p class="card-text lang-es">Sensor confiable para detección textil.</p>
-                                            <p class="card-text lang-ru">Надежный датчик для обнаружения текстиля.</p>
-                                            <a href="#contact" class="btn cta-btn">Inquire</a>
-                                        </div>
-                                    </div>
-                                </div>                                    <div class="card">
-                                        <img src="images/list3.jpg" class="card-img-top" alt="SICK Extension Module">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Photoelectric Sensor Model: WL280-S230</h5>
+                                            <h5 class="card-title"git add .>Photoelectric Sensor Model: WL280-S230</h5>
                                             <p class="card-text lang-en">Reliable sensor for textile detection.</p>
                                             <p class="card-text lang-id">Sensor andal untuk deteksi tekstil.</p>
                                             <p class="card-text lang-es">Sensor confiable para detección textil.</p>
@@ -160,20 +152,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Add remaining SICK products from PDF, e.g., Flexisoft CPU FX3-CPU000000 / 1043783 -->
-                                <!-- Repeat card structure for each: Gateway Profibus, Ethernet IP, etc. -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#erhardt">Erhardt+Leimer</button></h2>
-                    <div id="erhardt" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <div class="row">
                                 <div class="col-md-4 product-card mb-4">
                                     <div class="card">
-                                        <img src="https://placehold.co/300x200?text=Erhardt+CV2201" class="card-img-top" alt="CV2201 Amplifier Card">
+                                        <img src="images/list3.jpg" class="card-img-top" alt="Flexisoft CPU FX3-CPU000000">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Flexisoft CPU FX3-CPU000000 / 1043783</h5>
+                                            <p class="card-text lang-en">Compact CPU module for safety controllers.</p>
+                                            <p class="card-text lang-id">Modul CPU kompak untuk pengontrol keselamatan.</p>
+                                            <p class="card-text lang-es">Módulo CPU compacto para controladores de seguridad.</p>
+                                            <p class="card-text lang-ru">Компактный модуль CPU для контроллеров безопасности.</p>
+                                            <a href="#contact" class="btn cta-btn">Inquire</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 product-card mb-4">
+                                    <div class="card">
+                                        <img src="images/list4.jpg" class="card-img-top" alt="CV2201 Amplifier Card">
                                         <div class="card-body">
                                             <h5 class="card-title">CV2201 Amplifier Card Nr.302990</h5>
                                             <p class="card-text lang-en">Amplifier for precise control in dyeing processes.</p>
@@ -184,25 +178,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Add all Erhardt+Leimer products: DC5501, KF2020, PD2525, etc. -->
-                                <!-- Use images from PDF screenshots, e.g., for PD2525 load cell -->
+                                <div class="col-md-4 product-card mb-4">
+                                    <div class="card">
+                                        <img src="images/partslistpage2.jpg" class="card-img-top" alt="Level Switch LFL1.335">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Level Switch LFL1.335</h5>
+                                            <p class="card-text lang-en">Reliable level detection for industrial applications.</p>
+                                            <p class="card-text lang-id">Deteksi level andal untuk aplikasi industri.</p>
+                                            <p class="card-text lang-es">Detección de nivel confiable para aplicaciones industriales.</p>
+                                            <p class="card-text lang-ru">Надежное обнаружение уровня для промышленных приложений.</p>
+                                            <a href="#contact" class="btn cta-btn">Inquire</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Additional accordions for Phoenix Contact, Lenze, Baumer, Parts on Gas Burner, Tamagawa, VIPA, Baelz, Noeding, FESTO, BELIMO, DUNGS, HoneyWell, SIEMENS, RIELLO, KromSchröder, BURKERT, Nöding, IMI NORGREN, Fong's, SICK (others), Others -->
-                <!-- Example for one more -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siemens">SIEMENS</button></h2>
-                    <div id="siemens" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <div class="row">
-                                <!-- Add cards for LFL1.335, LGB21.130A27, etc., with translated descriptions -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Continue for all brands; in production, expand fully -->
             </div>
         </div>
     </section>
