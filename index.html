@@ -194,11 +194,12 @@
             <p>Reach out for inquiries on textile automation parts for Indonesia.</p>
             <div class="row">
                 <div class="col-md-6">
-                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <form name="contact" action="/thank-you" netlify netlify-honeypot="bot-field" method="POST">
                         <p class="d-none">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
                         <input type="hidden" name="form-name" value="contact" />
+                        <input type="hidden" name="subject" value="New contact from website" />
                         <div class="mb-3">
                             <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                         </div>
