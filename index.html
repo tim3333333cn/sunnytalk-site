@@ -67,6 +67,75 @@
             justify-content: flex-start;
         }
         .form-submit .btn { margin-right: 0.5rem; }
+        /* Lightbox / fullscreen preview for product images */
+        .product-img { cursor: zoom-in; transition: transform .2s ease; }
+        .product-img:active { transform: scale(0.99); }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.85);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity .25s ease, visibility .25s ease;
+            z-index: 2000;
+            padding: 20px;
+        }
+        .lightbox.open { visibility: visible; opacity: 1; }
+        .lightbox-img {
+            max-width: 92%;
+            max-height: 92%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border-radius: 6px;
+            object-fit: contain;
+            transition: transform .2s ease;
+            transform-origin: center center;
+            touch-action: none; /* we'll handle touch gestures */
+            will-change: transform;
+        }
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.45);
+            color: #fff;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2010;
+            font-size: 20px;
+        }
+        .lightbox-arrow.left { left: 18px; }
+        .lightbox-arrow.right { right: 18px; }
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 2010;
+        }
+        @media (max-width: 576px) {
+            .lightbox-img { max-width: 98%; max-height: 86%; }
+            .lightbox-close { width: 40px; height: 40px; top: 12px; right: 12px; }
+        }
     </style>
 </head>
 <body data-aos-easing="ease-in-out" data-aos-duration="800" class="lang-en">
@@ -138,7 +207,7 @@
             <div class="row">
                                 <div class="col-md-6 product-card mb-4">
                                     <div class="card">
-                                        <img src="images/list1.jpg" class="card-img-top" alt="Extension Module FX3-XTI084002">
+                                        <img src="images/list1.jpg" class="card-img-top product-img" alt="Extension Module FX3-XTI084002">
                                         <div class="card-body">
                                             <a href="#contact" class="btn cta-btn">Inquire</a>
                                         </div>
@@ -146,7 +215,7 @@
                                 </div>
                                 <div class="col-md-6 product-card mb-4">
                                     <div class="card">
-                                        <img src="images/list2.jpg" class="card-img-top" alt="Photoelectric Sensor WL280-S230">
+                                        <img src="images/list2.jpg" class="card-img-top product-img" alt="Photoelectric Sensor WL280-S230">
                                         <div class="card-body">
                                             <a href="#contact" class="btn cta-btn">Inquire</a>
                                         </div>
@@ -154,7 +223,7 @@
                                 </div>
                                 <div class="col-md-6 product-card mb-4">
                                     <div class="card">
-                                        <img src="images/list3.jpg" class="card-img-top" alt="Flexisoft CPU FX3-CPU000000">
+                                        <img src="images/list3.jpg" class="card-img-top product-img" alt="Flexisoft CPU FX3-CPU000000">
                                         <div class="card-body">
                                             <a href="#contact" class="btn cta-btn">Inquire</a>
                                         </div>
@@ -162,7 +231,7 @@
                                 </div>
                                 <div class="col-md-6 product-card mb-4">
                                     <div class="card">
-                                        <img src="images/list4.jpg" class="card-img-top" alt="CV2201 Amplifier Card">
+                                        <img src="images/list4.jpg" class="card-img-top product-img" alt="CV2201 Amplifier Card">
                                         <div class="card-body">
                                             <a href="#contact" class="btn cta-btn">Inquire</a>
                                         </div>
@@ -170,7 +239,7 @@
                                 </div>
                                 <div class="col-md-6 product-card mb-4">
                                     <div class="card">
-                                        <img src="images/partslistpage2.jpg" class="card-img-top" alt="Level Switch LFL1.335">
+                                        <img src="images/partslistpage2.jpg" class="card-img-top product-img" alt="Level Switch LFL1.335">
                                         <div class="card-body">
                                             <a href="#contact" class="btn cta-btn">Inquire</a>
                                          </div>
@@ -178,7 +247,7 @@
                                 </div>
                                 <div class="col-md-6 product-card mb-4">
                                     <div class="card">
-                                        <img src="images/partslistpage1.jpg" class="card-img-top" alt="Level Switch LFL1.336">
+                                        <img src="images/partslistpage1.jpg" class="card-img-top product-img" alt="Level Switch LFL1.336">
                                         <div class="card-body">
                                             <a href="#contact" class="btn cta-btn">Inquire</a></div>
                                     </div>
@@ -239,6 +308,138 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init();
+        // Lightbox for product images
+        (function(){
+            function qs(sel, ctx){ return (ctx || document).querySelector(sel); }
+            function qsa(sel, ctx){ return Array.from((ctx || document).querySelectorAll(sel)); }
+            const overlay = document.createElement('div');
+            overlay.className = 'lightbox';
+            overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">\u00d7</button>' +
+                                '<button class="lightbox-arrow left" aria-label="Previous">&#8249;</button>' +
+                                '<button class="lightbox-arrow right" aria-label="Next">&#8250;</button>' +
+                                '<img class="lightbox-img" src="" alt="">';
+            document.body.appendChild(overlay);
+
+            const lbImg = qs('.lightbox-img', overlay);
+            const lbClose = qs('.lightbox-close', overlay);
+            const lbPrev = qs('.lightbox-arrow.left', overlay);
+            const lbNext = qs('.lightbox-arrow.right', overlay);
+
+            // state
+            const thumbs = qsa('.product-img');
+            let currentIndex = 0;
+            let scale = 1;
+            let translateX = 0, translateY = 0;
+            let isPanning = false;
+            let panStart = {x:0,y:0};
+            let imgStart = {x:0,y:0};
+            let pinchStartDist = 0;
+            let pinchStartScale = 1;
+
+            function resetTransform() {
+                scale = 1; translateX = 0; translateY = 0;
+                lbImg.style.transform = 'translate(0px,0px) scale(1)';
+            }
+
+            function openLightboxByIndex(idx){
+                currentIndex = (idx + thumbs.length) % thumbs.length;
+                const thumb = thumbs[currentIndex];
+                const src = thumb.dataset.full || thumb.src;
+                lbImg.src = src;
+                lbImg.alt = thumb.alt || '';
+                resetTransform();
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox(){
+                overlay.classList.remove('open');
+                lbImg.src = '';
+                resetTransform();
+                document.body.style.overflow = '';
+            }
+
+            // Bind click on all product images
+            thumbs.forEach((img, idx) => {
+                img.style.touchAction = 'manipulation';
+                img.dataset.index = idx;
+                img.addEventListener('click', function(e){ openLightboxByIndex(idx); });
+                // keyboard accessibility: open on Enter when focused
+                img.setAttribute('tabindex','0');
+                img.addEventListener('keydown', function(ev){ if(ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openLightboxByIndex(idx); } });
+            });
+
+            // Close interactions
+            overlay.addEventListener('click', function(e){
+                if(e.target === overlay || e.target === lbClose) closeLightbox();
+            });
+
+            // Prev/Next
+            function showPrev(){ openLightboxByIndex(currentIndex-1); }
+            function showNext(){ openLightboxByIndex(currentIndex+1); }
+            lbPrev.addEventListener('click', function(e){ e.stopPropagation(); showPrev(); });
+            lbNext.addEventListener('click', function(e){ e.stopPropagation(); showNext(); });
+
+            // Keyboard
+            document.addEventListener('keydown', function(e){
+                if(!overlay.classList.contains('open')) return;
+                if(e.key === 'Escape') { closeLightbox(); }
+                if(e.key === 'ArrowLeft') { showPrev(); }
+                if(e.key === 'ArrowRight') { showNext(); }
+            });
+
+            // Wheel to zoom
+            overlay.addEventListener('wheel', function(e){
+                if(!overlay.classList.contains('open')) return;
+                e.preventDefault();
+                const delta = -e.deltaY;
+                const factor = delta > 0 ? 1.08 : 0.92;
+                scale = Math.min(5, Math.max(0.5, scale * factor));
+                lbImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+            }, { passive:false });
+
+            // Touch: pinch to zoom & pan
+            overlay.addEventListener('touchstart', function(e){
+                if(!overlay.classList.contains('open')) return;
+                if(e.touches.length === 2){
+                    pinchStartDist = Math.hypot(
+                        e.touches[0].pageX - e.touches[1].pageX,
+                        e.touches[0].pageY - e.touches[1].pageY
+                    );
+                    pinchStartScale = scale;
+                } else if(e.touches.length === 1 && scale > 1){
+                    isPanning = true;
+                    panStart = { x: e.touches[0].pageX, y: e.touches[0].pageY };
+                    imgStart = { x: translateX, y: translateY };
+                }
+            }, { passive: true });
+
+            overlay.addEventListener('touchmove', function(e){
+                if(!overlay.classList.contains('open')) return;
+                if(e.touches.length === 2){
+                    e.preventDefault();
+                    const dist = Math.hypot(
+                        e.touches[0].pageX - e.touches[1].pageX,
+                        e.touches[0].pageY - e.touches[1].pageY
+                    );
+                    const ns = pinchStartScale * (dist / pinchStartDist);
+                    scale = Math.min(6, Math.max(0.5, ns));
+                    lbImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                } else if(e.touches.length === 1 && isPanning){
+                    e.preventDefault();
+                    const dx = e.touches[0].pageX - panStart.x;
+                    const dy = e.touches[0].pageY - panStart.y;
+                    translateX = imgStart.x + dx;
+                    translateY = imgStart.y + dy;
+                    lbImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                }
+            }, { passive: false });
+
+            overlay.addEventListener('touchend', function(e){
+                if(!overlay.classList.contains('open')) return;
+                if(e.touches.length < 2){ pinchStartDist = 0; pinchStartScale = scale; }
+                if(e.touches.length === 0) { isPanning = false; }
+            });
+        })();
     </script>
 </body>
 </html>
