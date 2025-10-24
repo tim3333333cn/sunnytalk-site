@@ -12,10 +12,12 @@
     <style>
         body { font-family: 'Roboto', sans-serif; color: #333; background-color: white}
         h1, h2, h3, h5 { font-family: 'Montserrat', sans-serif; color: #C0392B; } /* Dark red from logo */
-        .navbar { background-color: #C0392B; } /* Dark gray */
+        .navbar { background-color: #FFFFFF; } /* White background */
+        .navbar .nav-link { color: #C0392B !important; } /* Red text for menu items */
         .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x800?text=Textile+Automation+Hero'); background-size: cover; background-attachment: fixed; color: white; padding: 150px 0; text-align: center; }
         .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        .card-img-top { height: 250px; object-fit: contain; width: 100%; padding: 15px; }
         .cta-btn { background-color: #C0392B; border: none; color: white; }
         .cta-btn:hover { background-color: #C0392B; }
         .bg-light { background-color: #FFFFFF !important; } /* Light gray from logo */
@@ -31,7 +33,7 @@
 <body data-aos-easing="ease-in-out" data-aos-duration="800">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="images/logo.jpg" alt="Sunnytalk Logo" style="height: 60px; width: auto;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -119,13 +121,7 @@
             <p class="lang-es">Explora nuestra gama de piezas de control automático, categorizadas por marca. Haz clic para detalles e indagación.</p>
             <p class="lang-ru">Изучите наш ассортимент частей автоматического контроля, категоризированных по бренду. Нажмите для деталей и запроса.</p>
 
-            <!-- Brand Accordions (Full list from PDFs) -->
-            <div class="accordion" id="productAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sick">SICK\Erhardt+Leimer\SIEMENS</button></h2>
-                    <div id="sick" class="accordion-collapse collapse show">
-                        <div class="accordion-body">
-                            <div class="row">
+            <div class="row">
                                 <div class="col-md-4 product-card mb-4">
                                     <div class="card">
                                         <img src="images/list1.jpg" class="card-img-top" alt="Extension Module FX3-XTI084002">
@@ -174,10 +170,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
