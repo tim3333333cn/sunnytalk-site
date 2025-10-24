@@ -96,6 +96,21 @@
             touch-action: none; /* we'll handle touch gestures */
             will-change: transform;
         }
+        /* hint shown on desktop only to guide users */
+        .lightbox-hint {
+            color: #fff;
+            background: rgba(0,0,0,0.35);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-top: 12px;
+            text-align: center;
+            max-width: 90%;
+        }
+        /* hide hint on small/touch devices */
+        @media (max-width: 992px) {
+            .lightbox-hint { display: none; }
+        }
         .lightbox-arrow {
             position: absolute;
             top: 50%;
@@ -312,10 +327,14 @@
             function qsa(sel, ctx){ return Array.from((ctx || document).querySelectorAll(sel)); }
             const overlay = document.createElement('div');
             overlay.className = 'lightbox';
-            overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">\u00d7</button>' +
-                                '<button class="lightbox-arrow left" aria-label="Previous">&#8249;</button>' +
-                                '<button class="lightbox-arrow right" aria-label="Next">&#8250;</button>' +
-                                '<img class="lightbox-img" src="" alt="">';
+            overlay.innerHTML =
+                '<button class="lightbox-close" aria-label="Close">\u00d7</button>' +
+                '<button class="lightbox-arrow left" aria-label="Previous">&#8249;</button>' +
+                '<button class="lightbox-arrow right" aria-label="Next">&#8250;</button>' +
+                '<div style="display:flex;flex-direction:column;align-items:center;">' +
+                    '<img class="lightbox-img" src="" alt="">' +
+                    '<div class="lightbox-hint">Use mouse wheel to zoom in/out</div>' +
+                '</div>';
             document.body.appendChild(overlay);
 
             const lbImg = qs('.lightbox-img', overlay);
